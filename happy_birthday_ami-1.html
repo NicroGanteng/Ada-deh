@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Ami! 🎂</title>
+<style>
+  :root { --pink:#ff8fbd; --purple:#b9a4ff; --yellow:#ffe58a; --ink:#59415f; }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; min-height:100vh; overflow-x:hidden; color:var(--ink);
+    font-family:"Trebuchet MS", system-ui, sans-serif;
+    background:linear-gradient(135deg,#fff0f7 0%,#f4efff 48%,#e8fbff 100%);
+    text-align:center;
+  }
+  .sparkles { position:fixed; inset:0; pointer-events:none; overflow:hidden; z-index:0; }
+  .sparkle { position:absolute; animation:twinkle 2.4s infinite ease-in-out; opacity:.75; }
+  @keyframes twinkle { 0%,100%{transform:scale(.7) rotate(0);opacity:.35} 50%{transform:scale(1.25) rotate(25deg);opacity:1} }
+  .wrap { position:relative; z-index:1; width:min(920px,94%); margin:auto; padding:28px 12px 48px; }
+  .badge { display:inline-block; background:#fff; border:2px dashed #ffabd0; border-radius:999px; padding:8px 18px; font-weight:bold; box-shadow:0 5px 0 #ffd7e8; }
+  h1 { margin:20px 0 8px; font-size:clamp(2.5rem,8vw,5.7rem); line-height:1.04; color:#ff5e9e; text-shadow:3px 4px 0 #fff, 0 8px 18px #ffc0db; }
+  .subtitle { font-size:clamp(1rem,3vw,1.35rem); margin:10px auto 22px; max-width:620px; }
+  .cake { font-size:clamp(4rem,12vw,7rem); display:inline-block; filter:drop-shadow(0 8px 5px #e9b8d1); animation:bounce 1.8s infinite; }
+  @keyframes bounce { 0%,100%{transform:translateY(0) rotate(-3deg)} 50%{transform:translateY(-12px) rotate(3deg)} }
+  .characters { display:flex; flex-wrap:wrap; justify-content:center; align-items:end; gap:14px; margin:22px auto 24px; }
+  .char-card { width:clamp(125px,22vw,175px); padding:13px 10px 14px; border:3px solid white; border-radius:25px; background:#ffffffc9; box-shadow:0 8px 0 #ead9f5,0 12px 24px #c7a8d633; transform:rotate(var(--tilt)); transition:transform .25s; }
+  .char-card:hover { transform:translateY(-8px) rotate(0deg) scale(1.04); }
+  .character { height:125px; display:flex; align-items:center; justify-content:center; filter:drop-shadow(0 5px 1px #e6d7e9); }
+  .character img { width:118px; height:118px; object-fit:contain; border-radius:18px; }
+  .char-card strong { display:block; font-size:1.02rem; margin-top:4px; }
+  .char-card small { color:#8a7596; }
+  .message { margin:24px auto; max-width:680px; padding:22px; border:3px dotted #ffa9cc; border-radius:26px; background:#fffdfd; box-shadow:0 9px 0 #f8d8e7; font-size:1.1rem; line-height:1.7; }
+  .message b { color:#ff5e9e; }
+  button { border:0; border-radius:999px; padding:14px 23px; margin:7px; font-size:1rem; font-weight:bold; cursor:pointer; color:#653c68; background:linear-gradient(135deg,#ffe58a,#ffb8d6); box-shadow:0 6px 0 #eaa2c7; transition:transform .15s; }
+  button:hover { transform:translateY(-3px); }
+  button:active { transform:translateY(2px); box-shadow:0 3px 0 #eaa2c7; }
+  #surprise { display:none; margin:20px auto 0; max-width:650px; padding:20px; border-radius:24px; background:#fff; border:2px solid #e3d6ff; animation:pop .4s ease-out; }
+  @keyframes pop { from{transform:scale(.75);opacity:0} to{transform:scale(1);opacity:1} }
+  .footer { margin-top:30px; font-size:.9rem; color:#917d9b; }
+  .confetti { position:fixed; top:-20px; z-index:5; pointer-events:none; animation:fall linear forwards; }
+  @keyframes fall { to { transform:translateY(110vh) rotate(720deg); opacity:.9; } }
+  .balloon { position:fixed; bottom:-100px; font-size:48px; animation:floatUp 9s linear infinite; opacity:.8; z-index:0; }
+  @keyframes floatUp { to { transform:translateY(-125vh) rotate(15deg); } }
+  @media(max-width:450px) { .message{padding:17px;font-size:1rem}.characters{gap:8px}.char-card{width:42%;} }
+</style>
+</head>
+<body>
+<div class="sparkles" id="sparkles"></div>
+<div class="wrap">
+  <div class="badge">🎀 A SPECIAL DAY FOR A SPECIAL PERSON 🎀</div>
+  <h1>Happy<br>Birthday, Ami!</h1>
+  <p class="subtitle">Hari ini waktunya senyum lebar, makan kue, dan menerima banyak cinta! 💖</p>
+  <div class="cake">🎂</div>
+
+  <div class="characters">
+    <div class="char-card" style="--tilt:-3deg">
+      <div class="character"><img src="https://chiikawaz.fun/assets/usagi-button.png" alt="Usagi dari Chiikawa" loading="lazy"></div><strong>Usagi</strong><small>WAAAH!! 🎉</small>
+    </div>
+    <div class="char-card" style="--tilt:2deg">
+      <div class="character"><img src="https://chiikawaz.fun/assets/chii-button.png" alt="Chiikawa" loading="lazy"></div><strong>Chiikawa</strong><small>Semangat, Ami! 💗</small>
+    </div>
+    <div class="char-card" style="--tilt:-2deg">
+      <div class="character"><img src="https://chiikawaz.fun/assets/hachi-button.png" alt="Hachiware dari Chiikawa" loading="lazy"></div><strong>Hachiware</strong><small>Selamat ulang tahun! ✨</small>
+    </div>
+    <div class="char-card" style="--tilt:3deg">
+      <div class="character"><img src="https://chiikawaz.fun/assets/momonga.png" alt="Momonga dari Chiikawa" loading="lazy"></div><strong>Momonga</strong><small>Hari ini kamu bintang! ⭐</small>
+    </div>
+  </div>
+
+  <div class="message">
+    <div style="font-size:2rem">💌🌷🎁</div>
+    <b>Untuk Ami tersayang,</b><br>
+    Selamat ulang tahun! Semoga Ami selalu sehat, bahagia, makin beruntung,
+    dikelilingi orang-orang baik, dan semua harapan baiknya satu per satu terwujud.
+    Semoga hari ini penuh kejutan manis, tawa, dan kenangan yang indah! 🥳
+    <div style="font-size:1.5rem;margin-top:8px">💖 🧁 💖</div>
+  </div>
+
+  <button onclick="celebrate()">🎊 Rayakan lagi!</button>
+  <button onclick="showSurprise()">🎁 Buka kejutan</button>
+  <div id="surprise">
+    <div style="font-size:3rem">💝✨🎉</div>
+    <h2 style="color:#ff5e9e;margin:5px">Surprise untuk Ami!</h2>
+    <p>Wish you the sweetest birthday ever! Jangan lupa make a wish dan tiup lilinnya! 🕯️</p>
+    <p style="font-size:1.5rem">🐰🐹🐱🌈💗</p>
+  </div>
+  <div class="footer">Made with 💗 just for Ami · Chiikawa-inspired birthday page</div>
+</div>
+
+<script>
+  const sparkleBox = document.getElementById('sparkles');
+  const sparkleSymbols = ['✦','✧','♡','⭐','✿'];
+  for(let i=0;i<42;i++){
+    const s=document.createElement('span');
+    s.className='sparkle'; s.textContent=sparkleSymbols[Math.floor(Math.random()*sparkleSymbols.length)];
+    s.style.left=Math.random()*100+'%'; s.style.top=Math.random()*100+'%';
+    s.style.fontSize=(12+Math.random()*20)+'px';
+    s.style.animationDelay=(Math.random()*3)+'s';
+    sparkleBox.appendChild(s);
+  }
+  for(let i=0;i<7;i++){
+    const b=document.createElement('div'); b.className='balloon';
+    b.textContent=['🎈','💗','🎈','🌸'][i%4];
+    b.style.left=(i*15+Math.random()*5)+'%';
+    b.style.animationDelay=(i*1.2)+'s';
+    b.style.animationDuration=(8+Math.random()*5)+'s';
+    document.body.appendChild(b);
+  }
+  function confettiBurst(){
+    const symbols=['🎉','💖','✨','🌸','🎊','⭐','🎀'];
+    for(let i=0;i<55;i++){
+      const c=document.createElement('span'); c.className='confetti';
+      c.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+      c.style.left=Math.random()*100+'vw';
+      c.style.fontSize=(15+Math.random()*20)+'px';
+      c.style.animationDuration=(2.5+Math.random()*3)+'s';
+      document.body.appendChild(c);
+      setTimeout(()=>c.remove(),6000);
+    }
+  }
+  function celebrate(){ confettiBurst(); }
+  function showSurprise(){
+    const box=document.getElementById('surprise');
+    box.style.display='block'; confettiBurst();
+    box.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+  window.addEventListener('load',()=>setTimeout(confettiBurst,350));
+</script>
+</body>
+</html>
